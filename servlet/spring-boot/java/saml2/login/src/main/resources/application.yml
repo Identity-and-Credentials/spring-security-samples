@@ -13,4 +13,4 @@ spring:
             singlelogout:
               binding: POST
               url: "{baseUrl}/logout/saml2/slo"
-            assertingparty.metadata-uri: https://dev-05937739.okta.com/app/exk46xofd8NZvFCpS5d7/sso/saml/metadata
+            assertingparty.metadata-uri: https://dev-73893672.okta.com/app/exkef5al7mopEta1B5d7/sso/saml/metadata
