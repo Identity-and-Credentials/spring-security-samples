@@ -49,3 +49,5 @@ User: testuser2@spring.security.saml
 Password: 12345678
 ```
 
+=== Get SP metadata
+http://localhost:8080/saml2/metadata
