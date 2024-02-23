@@ -18,7 +18,7 @@ public class SecurityConfiguration {
                         .anyRequest().authenticated()
                 )
                 .saml2Login(withDefaults())
-                .saml2Metadata(withDefaults());
+                .saml2Metadata((saml2) -> saml2.metadataUrl("/saml/metadata"));
         // @formatter:on
         return http.build();
     }
