@@ -14,6 +14,7 @@ import org.springframework.security.saml2.provider.service.web.RelyingPartyRegis
 import org.springframework.security.saml2.provider.service.web.Saml2MetadataFilter;
 import org.springframework.security.saml2.provider.service.web.authentication.Saml2WebSsoAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -39,6 +40,7 @@ public class SecurityConfiguration {
         Saml2MetadataFilter filter = new Saml2MetadataFilter(
                 relyingPartyRegistrationResolver,
                 new OpenSamlMetadataResolver());
+        filter.setRequestMatcher(new AntPathRequestMatcher("/saml/metadata/{registrationId}", "GET"));
 
         http
                 .authorizeHttpRequests((authorize) -> authorize
