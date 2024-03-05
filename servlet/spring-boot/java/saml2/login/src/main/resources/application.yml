@@ -3,6 +3,8 @@ logging.level:
 
 spring:
   security:
+    filter:
+      dispatcher-types: async, error, request, forward
     saml2:
       relyingparty:
         registration:
