@@ -40,14 +40,14 @@ public class SecurityConfiguration {
         Saml2MetadataFilter filter = new Saml2MetadataFilter(
                 relyingPartyRegistrationResolver,
                 new OpenSamlMetadataResolver());
-        filter.setRequestMatcher(new AntPathRequestMatcher("/saml/metadata/{registrationId}", "GET"));
+        filter.setRequestMatcher(new AntPathRequestMatcher("/saml/metadata/**", "GET"));
 
         http
                 .authorizeHttpRequests((authorize) -> authorize
                         .anyRequest().authenticated()
                 )
                 .saml2Login(withDefaults())
-                .addFilterBefore(filter, Saml2WebSsoAuthenticationFilter.class);;
+                .addFilterBefore(filter, Saml2WebSsoAuthenticationFilter.class);
         return http.build();
     }
 }

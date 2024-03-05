@@ -14,14 +14,14 @@ repositories {
 
 dependencies {
 	constraints {
-		implementation "org.opensaml:opensaml-core:4.1.1"
-		implementation "org.opensaml:opensaml-saml-api:4.1.1"
-		implementation "org.opensaml:opensaml-saml-impl:4.1.1"
+		implementation "org.opensaml:opensaml-core:4.2.0"
+		implementation "org.opensaml:opensaml-saml-api:4.2.0"
+		implementation "org.opensaml:opensaml-saml-impl:4.2.0"
 	}
-	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-security:2.7.18'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.security:spring-security-saml2-service-provider'
+	implementation 'org.springframework.security:spring-security-saml2-service-provider:5.8.10'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 
 	testImplementation 'net.sourceforge.htmlunit:htmlunit:2.70.0'
